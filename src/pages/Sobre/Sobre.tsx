@@ -15,8 +15,7 @@ export default function Sobre() {
       loop: false,
       showCursor: false,
     });
-
-    // Limpa a instância ao desmontar o componente
+    
     return () => {
       typed.destroy();
     };

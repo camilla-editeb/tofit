@@ -15,7 +15,6 @@ const Login = () => {
             onClick={() => setModoCadastro(false)}
           >
             Login
-
           </button>
           <button 
             type="button"
@@ -32,14 +31,20 @@ const Login = () => {
         <input type="email" placeholder="E-mail" required />
         <input type="password" placeholder="Senha" required />
 
-        {!modoCadastrando && (
-          <a href="#" className={styles.forgotPassword}>esqueci minha senha</a>
+        {modoCadastrando ? (
+          <button type="submit" className={styles.bttn}>
+            Criar Conta
+          </button>
+        ) : (
+          <div className={styles.actions}>
+            <button type="submit" className={styles.bttn}>
+              Entrar
+            </button>
+            <button type="button" className={styles.forgotPassword}>
+              Esqueci minha senha
+            </button>
+          </div>
         )}
-        
-        <button type="submit" className={styles.bttn}>
-          {modoCadastrando ? 'Criar Conta' : 'Entrar'}
-        </button>
-
       </form>
     </main>
   );
